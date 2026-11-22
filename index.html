@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A little hug for Samary</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 20px; background: linear-gradient(140deg, #fff0f3, #fff8e8);
+      color: #654b52; font-family: "Trebuchet MS", sans-serif;
+    }
+    .card {
+      width: min(100%, 420px); padding: 26px 22px; text-align: center;
+      background: #fffdfb; border: 2px solid #ffe1e5; border-radius: 28px;
+      box-shadow: 0 12px 32px #b9788730;
+    }
+    h1 { color: #bd7180; font-size: 25px; }
+    p { line-height: 1.65; }
+    .bear { font-size: 76px; animation: bob 2s ease-in-out infinite; }
+    button {
+      border: 0; border-radius: 22px; padding: 11px 16px; margin: 5px;
+      background: #e995a3; color: white; font-size: 15px; cursor: pointer;
+    }
+    button:hover { background: #cc7485; transform: translateY(-2px); }
+    #note { min-height: 115px; }
+    .small { color: #a77d83; font-size: 13px; }
+    @keyframes bob { 50% { transform: translateY(-7px) rotate(3deg); } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="bear" id="bear" aria-label="Cute teddy bear">🧸</div>
+    <h1>For my lil lovely Maryy 💕</h1>
+
+    <p id="note">
+      My lil lovely Maryy, my ounn somlanh 🤍 I’m sorry yesterday felt so upsetting.
+      You don’t have to pretend you like your haircut or feel okay straight away.
+      I’m here with you, sweetheart—just as you are.
+    </p>
+
+<button type="button" onclick="showNote(0)">A little reminder</button>
+<button type="button" onclick="showNote(1)">Send me a hug</button>
+<button type="button" onclick="showNote(2)">Make me smile</button>
+
+    <p class="small">Made with all my love, from Rahul 💌</p>
+  </main>
+
+  <script>
+    const notes = [
+      "My lil lovely Maryy, my ounn somlanh 🤍 You don’t have to love your haircut today. Take your time, sweetheart. I love you for being you—not for any hairstyle.",
+      "Sending you the biggest teddy-bear hug 🧸🤗 I wish I could hold you close and listen. You can tell me everything, or we can just sit together.",
+      "Important bear announcement: you are still my gorgeous girl, and this tiny bear is officially on your team! 🧸💕"
+    ];
+
+    function showNote(number) {
+      document.getElementById("note").textContent = notes[number];
+      document.getElementById("bear").textContent =
+        number === 1 ? "🤗" : number === 2 ? "🐻" : "🧸";
+    }
+  </script>
+</body>
+</html>
